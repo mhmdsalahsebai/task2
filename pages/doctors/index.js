@@ -23,9 +23,8 @@ const index = ({doctorsData}) => {
             <h2 className='mb-4'>قائمة بجميع الأطباء في كيورا</h2>
             <div className='row'>
                 {doctors.map(doctor => (
-                    <div className="col-4 px-4 mb-5" key={doctor.Id}>
+                    <div className="col-lg-4 col-md-6 px-4 mb-5" key={doctor.Id}>
                         <div className='crad border p-4'>
-                            <img src="..." className="card-img-top" alt="..." />
                             <div className="card-body">
                             <h5 className="card-title">{doctor.FirstName} {doctor.LastName}</h5>
                             <p className="card-text">{doctor.AboutMe}</p>
