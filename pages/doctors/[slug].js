@@ -45,7 +45,7 @@ const Doctor = ({result}) => {
 
                 <header className="col-lg-4">
                     <div className="doctor__image mb-4 text-center">
-                        <img className='rounded-circle' src={`https://s3-eu-west-1.amazonaws.com/curaapps/${doctor.ProfilePic}`}alt={`${doctor.FirstName} ${doctor.LastName}`} width={200} height={200} />
+                        <img className='rounded-circle' src={`https://s3-eu-west-1.amazonaws.com/curaapps/${doctor.ProfilePic}`} alt={`${doctor.FirstName} ${doctor.LastName}`} width={200} height={200} />
                     </div>
                     <h1 className='doctor__name mb-3 h2 text-center'>{doctor.FirstName_ar} {doctor.LastName_ar}</h1>
                     <h2 className='doctor__title mb-4 h4 text-center'>{doctor.SpecialtyTitle_ar}</h2>
@@ -91,12 +91,12 @@ const Doctor = ({result}) => {
                     </ul>
                 </header>
 
-                <div className="col-lg-8 pe-5">
+                <div className="col-lg-8">
                     <section className='information'>
                         <h3 className='mb-3'>المعلومات</h3>
                         <div className='card-container'>
                             {sections.map(section => (
-                                <div className="card mb-4 shadow border-0" key={section.Type}>
+                                <div className="card mb-4 shadow-sm border" key={section.Type}>
                                     <div className="card-body">
                                         <h4 className="card-title mb-3">{info[section.Type]}</h4>
                                         <ul>
