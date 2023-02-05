@@ -43,12 +43,12 @@ const Doctor = ({result}) => {
         <div className="container">
             <div className="row">
 
-                <header className="col-lg-4 text-center">
-                    <div className="doctor__image mb-4">
+                <header className="col-lg-4">
+                    <div className="doctor__image mb-4 text-center">
                         <img className='rounded-circle' src={`https://s3-eu-west-1.amazonaws.com/curaapps/${doctor.ProfilePic}`}alt={`${doctor.FirstName} ${doctor.LastName}`} width={200} height={200} />
                     </div>
-                    <h1 className='doctor__name mb-3 h2'>{doctor.FirstName_ar} {doctor.LastName_ar}</h1>
-                    <h2 className='doctor__title mb-4 h4'>{doctor.SpecialtyTitle_ar}</h2>
+                    <h1 className='doctor__name mb-3 h2 text-center'>{doctor.FirstName_ar} {doctor.LastName_ar}</h1>
+                    <h2 className='doctor__title mb-4 h4 text-center'>{doctor.SpecialtyTitle_ar}</h2>
                     <div className={styles.rating}>
                         <div className={styles.rating__stars}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">

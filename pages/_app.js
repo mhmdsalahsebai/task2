@@ -46,7 +46,7 @@ export default function App({ Component, pageProps }) {
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <form className="d-flex me-auto" role="search">
-            <button className="btn btn-light border" type="submit">تسجيل دخول</button>
+            <button className="btn btn-light border px-4 py-2 text-bo" type="submit">تسجيل دخول</button>
             <button className="btn btn-primary me-2" type="submit">تسجيل حساب</button>
             <button className="btn btn-light me-2" type="submit">
               <svg className='ms-2' width="19" height="19" viewBox="0 0 19 19" xmlns="http://www.w3.org/2000/svg">
