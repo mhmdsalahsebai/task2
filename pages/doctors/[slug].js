@@ -42,15 +42,32 @@ const Doctor = ({result}) => {
         <div className="container">
             <div className="row">
 
-                <header className="col-lg-4">
+                <header className="col-lg-4 text-center">
                     <div className="doctor__image mb-4">
                         <img className='rounded-circle' src={`https://s3-eu-west-1.amazonaws.com/curaapps/${doctor.ProfilePic}`}alt={`${doctor.FirstName} ${doctor.LastName}`} width={200} height={200} />
                     </div>
-                    <h1 className='doctor__name'>{doctor.FirstName_ar} {doctor.LastName_ar}</h1>
-                    <h2 className='doctor__title'>{doctor.SpecialtyTitle_ar}</h2>
-                    <div className='rating'>
-                        <div className='rating__stars'>12345</div>
-                        <div className='rating__count'>{doctor.ReviewsCount} تقييم</div>
+                    <h1 className='doctor__name mb-3 h2'>{doctor.FirstName_ar} {doctor.LastName_ar}</h1>
+                    <h2 className='doctor__title mb-4 h4'>{doctor.SpecialtyTitle_ar}</h2>
+                    <div className={styles.rating}>
+                        <div className={styles.rating__stars}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
+                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                            </svg>
+                        </div>
+                        <div className='rating__count'>{doctor.Rating} تقييم</div>
                     </div>
 
                     <hr />
@@ -96,8 +113,8 @@ const Doctor = ({result}) => {
                         </div>
                     </section>
 
-                    <section className='reviews pb-5'>
-                        <h3>التقييم</h3>
+                    <section className='reviews pb-5 mt-5'>
+                        <h3 className='mb-3'>التقييم</h3>
                         <div className='card-container'>
 
                             {rating.map(rate => (
