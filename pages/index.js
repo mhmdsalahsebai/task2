@@ -18,9 +18,9 @@ export default function Home() {
       <main className={styles.main}>
         <div className='container'>
 
-          <h1>Cura Healthcare</h1>  
-          <Link href='/doctors' className='btn btn-primary'>
-            List of doctors
+          <h1 className='mb-4 mt-5'>شركة كيورا للرعاية الصحية</h1>  
+          <Link href='/doctors' className='btn btn-light border btn-lg'>
+            شاهد جميع الأطباء من هنا
           </Link>
         </div>
       </main>

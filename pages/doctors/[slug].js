@@ -1,13 +1,13 @@
 import React, {useState} from 'react'
 
-import Image from 'next/image'
+import styles from './[slug].module.css'
 
 import info from '../../data/data'
 
 export async function getServerSideProps({params}) {
     const {slug} = params
     
-    const request = await fetch(`https://api-dev.cura.healthcare/DoctorProfileAnonymous?Username=${slug}`)
+    const request = await fetch(`https://api.cura.healthcare/DoctorProfileAnonymous?Username=${slug}`)
     const result = await request.json()
 
     return {
@@ -21,6 +21,7 @@ const Doctor = ({result}) => {
     const [moreRating, setMoreRating] = useState(10)
 
     const doctor = result.Result
+    console.log(doctor)
     let sections = doctor.Sections.map(obj => (
         {Type: obj.Type, Title: obj.ViewTitle, data: obj.Items}
     ))
@@ -37,15 +38,12 @@ const Doctor = ({result}) => {
         }
     }
 
-    console.log(rating)
-    console.log('sections', sections)
-
     return (
         <div className="container">
             <div className="row">
 
                 <header className="col-lg-4">
-                    <div className="doctor__image">
+                    <div className="doctor__image mb-4">
                         <img className='rounded-circle' src={`https://s3-eu-west-1.amazonaws.com/curaapps/${doctor.ProfilePic}`}alt={`${doctor.FirstName} ${doctor.LastName}`} width={200} height={200} />
                     </div>
                     <h1 className='doctor__name'>{doctor.FirstName_ar} {doctor.LastName_ar}</h1>
@@ -56,33 +54,33 @@ const Doctor = ({result}) => {
                     </div>
 
                     <hr />
-                    <ul className='doctor__details'>
-                        <li>
-                            <h5>العمل</h5>
+                    <ul className={styles.doctor__details}>
+                        <li className='mb-4'>
+                            <h4 className='mb-3'>العمل</h4>
                             <h6>{doctor.AboutMe}</h6>
                         </li>
-                        <li>
-                            <h5>البلد</h5>
+                        <li className='mb-4'>
+                            <h4 className='mb-3'>البلد</h4>
                             <h6>{doctor.CountryName_ar}, {doctor.CityCityName_ar}</h6>
                         </li>
-                        <li>
-                            <h5>اللغات</h5>
+                        <li className='mb-4'>
+                            <h5 className='mb-3'>اللغات</h5>
                             <h6>العربية والأنجليزية</h6>
                         </li>
-                        <li>
-                            <a className='btn btn-primary d-block' href='/'>أستشر الان</a>
+                        <li className='mb-4'>
+                            <a className='btn btn-primary d-block btn-lg' href='/'>أستشر الان</a>
                         </li>
                     </ul>
                 </header>
 
                 <div className="col-lg-8">
                     <section className='information'>
-                        <h3>المعلومات</h3>
+                        <h3 className='mb-3'>المعلومات</h3>
                         <div className='card-container'>
                             {sections.map(section => (
-                                <div className="card mb-4" key={section.Type}>
+                                <div className="card mb-4 shadow-sm border-0" key={section.Type}>
                                     <div className="card-body">
-                                        <h5 className="card-title">{info[section.Type]}</h5>
+                                        <h4 className="card-title mb-3">{info[section.Type]}</h4>
                                         <ul>
                                             {section.data.map(data => (
                                                 <li className="card-text">
@@ -121,7 +119,7 @@ const Doctor = ({result}) => {
 
                         </div>
                         <button 
-                            className='btn btn-primary d-block w-100' 
+                            className='btn btn-primary d-block w-100 btn-lg mt-5' 
                             onClick={handleMoreRating}>عرض المزيد</button>
                     </section>
                     

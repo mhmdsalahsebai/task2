@@ -1,3 +1,31 @@
 * {
     direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    min-height: 80vh;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.social-media {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 24px;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn-primary {
+    background-color: #3996dd !important;
+    border-color: #3996dd;
 }
