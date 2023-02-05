@@ -24,3 +24,7 @@ footer {
     background-color: #3996dd !important;
     border-color: #3996dd;
 }
+
+h1, h2, h3 {
+    font-weight: bold;
+}

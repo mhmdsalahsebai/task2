@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 
 import styles from './[slug].module.css'
-
 import info from '../../data/data'
+
+import moment from 'moment'
 
 export async function getServerSideProps({params}) {
     const {slug} = params
@@ -90,12 +91,12 @@ const Doctor = ({result}) => {
                     </ul>
                 </header>
 
-                <div className="col-lg-8">
+                <div className="col-lg-8 pe-5">
                     <section className='information'>
                         <h3 className='mb-3'>المعلومات</h3>
                         <div className='card-container'>
                             {sections.map(section => (
-                                <div className="card mb-4 shadow-sm border-0" key={section.Type}>
+                                <div className="card mb-4 shadow border-0" key={section.Type}>
                                     <div className="card-body">
                                         <h4 className="card-title mb-3">{info[section.Type]}</h4>
                                         <ul>
@@ -123,7 +124,7 @@ const Doctor = ({result}) => {
                                         <img className='rounded-full' src='https://cura.healthcare/Content/img/profileempty.png' alt='مستخدم كيورا' />
                                         <div className='me-3'>
                                             <h5 className="card-title">مستخدم كيورا</h5>
-                                            <p>{rate.RecommendationDate}</p>
+                                            <p>{moment(rate.RecommendationDate).fromNow()}</p>
                                         </div>
                                     </div>
                                     <div className="card-body">
